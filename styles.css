@@ -1,0 +1,100 @@
+/* Allgemeine Einstellungen */
+body {
+    margin: 0;
+    font-family: 'Great Vibes', cursive;
+    background: linear-gradient(to bottom, #d6efff, #b0d4f0);
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Header */
+  header {
+    background: #fbc02d;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  /* Kalender Layout */
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Spalten */
+    gap: 10px;
+    padding: 20px;
+    max-width: 420px;
+    margin: 20px auto;
+  }
+  
+  .door {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid #388e3c; /* Dunkelgrüner Rand */
+    border-radius: 10px;
+    margin: 5px;
+    color: white;
+  }
+  
+  .door:hover {
+    transform: scale(1.05); /* Kleiner Vergrößerungseffekt */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Hover-Schatten */
+  }
+  
+  .door.opened {
+    background-color: #e0e0e0; /* Helles Grau */
+    color: #a0a0a0; /* Graue Schrift */
+    border: 2px solid #b0b0b0; /* Grauer Rand */
+    box-shadow: none; /* Kein Schatten mehr */
+    cursor: pointer; /* Klickbar bleiben */
+  }
+  
+  .door#door-24 {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  
+  footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+
+  #reset-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #d32f2f; /* Weihnachtliches Rot */
+    color: #ffffff; /* Weiß für den Kontrast */
+    border: 2px solid #388e3c; /* Dunkelgrüner Rand */
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Dezenter Schatten */
+    transition: all 0.3s ease; /* Sanfte Übergänge */
+  }
+  
+  #reset-button:hover {
+    background-color: #388e3c; /* Dunkles Grün beim Hover */
+    color: #ffd700; /* Goldene Schriftfarbe */
+    border-color: #d32f2f; /* Rot als Randfarbe */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Stärkerer Schatten */
+  }
+  
+  

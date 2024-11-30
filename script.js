@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://instagram.com/reel/21",
       "https://instagram.com/reel/22",
       "https://instagram.com/reel/23",
-      "https://instagram.com/reel/24"
+      "https://www.therme-erding.de/"
     ];
   
     // Lade den Status der Türchen aus dem Local Storage
@@ -36,56 +36,77 @@ document.addEventListener("DOMContentLoaded", () => {
     // Aktuelles Datum
     const today = new Date();
     const currentDay = today.getDate();
+    const currentMonth = today.getMonth() + 1; // Monate in JavaScript sind 0-indexiert, daher +1
   
     // Türchen erstellen (randomisierte Reihenfolge)
     const doors = Array.from({ length: 24 }, (_, i) => i + 1).sort(() => Math.random() - 0.5);
   
-    doors.forEach((day) => {
-      const door = document.createElement("div");
-      door.className = "door";
-      door.textContent = day;
+    // Wenn der Monat nicht Dezember ist, alle Türchen sperren
+    if (currentMonth !== 12) {
+      doors.forEach((day) => {
+        const door = document.createElement("div");
+        door.className = "door locked"; // Türchen wird gesperrt
+        door.textContent = day;
   
-      // Wenn es Türchen 24 ist, dann goldene Farbe und größere Größe
-      if (day === 24) {
-        door.classList.add("door-24"); // Spezielle Klasse für Türchen 24
-        door.style.backgroundColor = "#d4af37"; // Gold für Türchen 24
-      } else if (openedDoors.includes(day)) {
-        door.classList.add("opened");
-        door.style.backgroundColor = "#d3d3d3"; // Ausgegraute Fläche
-        door.style.color = "#7a7a7a"; // Graue Schrift
-        door.style.cursor = "not-allowed"; // Sperre das Türchen für nochmaliges Öffnen
-      } else if (day > currentDay) {
-        door.classList.add("locked");
-        door.style.backgroundColor = "#b71c1c"; // Rot für gesperrte Türchen
-        door.style.color = "white";
-      } else {
-        door.style.backgroundColor = day % 2 === 0 ? "#2e7d32" : "#d32f2f"; // Grün oder Rot
-        door.style.color = "white";
-      }
+        // Türchen 24 speziell behandeln
+        if (day === 24) {
+          door.classList.add("door-24");
+          door.style.backgroundColor = "#d4af37"; // Gold für Türchen 24
+        } else {
+          door.style.backgroundColor = day % 2 === 0 ? "#2e7d32" : "#d32f2f"; // Grün oder Rot
+        }
   
-      // Klick-Event für Türchen
-      door.addEventListener("click", () => {
-        if (day <= currentDay && !openedDoors.includes(day)) {
-          openedDoors.push(day);
-          localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
+        calendar.appendChild(door);
+      });
+    } else {
+      // Türchen erstellen und zugänglich machen, wenn Dezember ist
+      doors.forEach((day) => {
+        const door = document.createElement("div");
+        door.className = "door";
+        door.textContent = day;
   
-          // Sofortiges Ausgrauen des Türchens
+        // Wenn es Türchen 24 ist, dann goldene Farbe und größere Größe
+        if (day === 24) {
+          door.classList.add("door-24");
+          door.style.backgroundColor = "#d4af37"; // Gold für Türchen 24
+        } else if (openedDoors.includes(day)) {
           door.classList.add("opened");
           door.style.backgroundColor = "#d3d3d3"; // Ausgegraute Fläche
           door.style.color = "#7a7a7a"; // Graue Schrift
           door.style.cursor = "not-allowed"; // Sperre das Türchen für nochmaliges Öffnen
-  
-          alert(`Türchen ${day} geöffnet!`);
-          window.open(doorLinks[day - 1], "_blank"); // Link in neuem Tab öffnen
         } else if (day > currentDay) {
-          alert("Dieses Türchen ist noch gesperrt!");
-        } else if (openedDoors.includes(day)) {
-          window.open(doorLinks[day - 1], "_blank"); // Bereits geöffnet, Link trotzdem verfügbar
+          door.classList.add("locked");
+          door.style.backgroundColor = "#b71c1c"; // Rot für gesperrte Türchen
+          door.style.color = "white";
+        } else {
+          door.style.backgroundColor = day % 2 === 0 ? "#2e7d32" : "#2e7d32"; // Grün oder Rot
+          door.style.color = "white";
         }
-      });
   
-      calendar.appendChild(door);
-    });
+        // Klick-Event für Türchen
+        door.addEventListener("click", () => {
+          if (day <= currentDay && !openedDoors.includes(day)) {
+            openedDoors.push(day);
+            localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
+  
+            // Sofortiges Ausgrauen des Türchens
+            door.classList.add("opened");
+            door.style.backgroundColor = "#d3d3d3"; // Ausgegraute Fläche
+            door.style.color = "#7a7a7a"; // Graue Schrift
+            door.style.cursor = "not-allowed"; // Sperre das Türchen für nochmaliges Öffnen
+  
+            //alert(`Türchen ${day} geöffnet!`);
+            window.open(doorLinks[day - 1], "_blank"); // Link in neuem Tab öffnen
+          } else if (day > currentDay) {
+            alert("Dieses Türchen ist noch gesperrt!");
+          } else if (openedDoors.includes(day)) {
+            window.open(doorLinks[day - 1], "_blank"); // Bereits geöffnet, Link trotzdem verfügbar
+          }
+        });
+  
+        calendar.appendChild(door);
+      });
+    }
   
     // Reset-Button
     resetButton.addEventListener("click", () => {

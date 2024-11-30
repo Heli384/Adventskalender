@@ -2,90 +2,95 @@ document.addEventListener("DOMContentLoaded", () => {
     const calendar = document.getElementById("calendar");
     const resetButton = document.getElementById("reset-button");
   
-    // Farben für die Türchen
-    const colors = ["#d32f2f", "#388e3c", "#d4af37"]; // Rot, Grün, Gold
-  
     // Links für die Türchen
-    const links = [
+    const doorLinks = [
       "https://www.instagram.com/dannygould89/reel/DC1M_2EocmN/",
-      "https://www.instagram.com/reel/Link2",
-      "https://www.instagram.com/reel/Link3",
-      // ... bis Link 24
-      "https://www.instagram.com/reel/Link24"
+      "https://instagram.com/reel/2",
+      "https://instagram.com/reel/3",
+      "https://instagram.com/reel/4",
+      "https://instagram.com/reel/5",
+      "https://instagram.com/reel/6",
+      "https://instagram.com/reel/7",
+      "https://instagram.com/reel/8",
+      "https://instagram.com/reel/9",
+      "https://instagram.com/reel/10",
+      "https://instagram.com/reel/11",
+      "https://instagram.com/reel/12",
+      "https://instagram.com/reel/13",
+      "https://instagram.com/reel/14",
+      "https://instagram.com/reel/15",
+      "https://instagram.com/reel/16",
+      "https://instagram.com/reel/17",
+      "https://instagram.com/reel/18",
+      "https://instagram.com/reel/19",
+      "https://instagram.com/reel/20",
+      "https://instagram.com/reel/21",
+      "https://instagram.com/reel/22",
+      "https://instagram.com/reel/23",
+      "https://instagram.com/reel/24"
     ];
   
-    // Speicher für geöffnete Türchen
+    // Lade den Status der Türchen aus dem Local Storage
     const openedDoors = JSON.parse(localStorage.getItem("openedDoors")) || [];
   
-    // Funktion, um die Türchen zufällig anzuordnen
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
+    // Aktuelles Datum
+    const today = new Date();
+    const currentDay = today.getDate();
   
-    // Zufällige Reihenfolge für die Türchen erstellen
-    const doorIndices = Array.from({ length: 24 }, (_, i) => i); // [0, 1, 2, ..., 23]
-    shuffleArray(doorIndices);
+    // Türchen erstellen (randomisierte Reihenfolge)
+    const doors = Array.from({ length: 24 }, (_, i) => i + 1).sort(() => Math.random() - 0.5);
   
-    // Türchen dynamisch erstellen
-    doorIndices.forEach((index, i) => {
+    doors.forEach((day) => {
       const door = document.createElement("div");
-      door.classList.add("door");
-      door.setAttribute("data-link", links[index]);
-      door.textContent = index + 1;
+      door.className = "door";
+      door.textContent = day;
   
-      // Zufällige Farbe
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      door.style.backgroundColor = randomColor;
-  
-      // Türchen 24 ist etwas größer
-      if (index === 23) {
-        door.style.width = "100px";
-        door.style.height = "100px";
-        door.style.fontSize = "20px";
-        door.style.fontWeight = "bold";
-      }
-  
-      // Markiere geöffnete Türchen
-      if (openedDoors.includes(index)) {
+      // Wenn es Türchen 24 ist, dann goldene Farbe und größere Größe
+      if (day === 24) {
+        door.classList.add("door-24"); // Spezielle Klasse für Türchen 24
+        door.style.backgroundColor = "#d4af37"; // Gold für Türchen 24
+      } else if (openedDoors.includes(day)) {
         door.classList.add("opened");
-        door.style.backgroundColor = "#e0e0e0"; // Grau
-        door.style.color = "#a0a0a0"; // Graue Schrift
+        door.style.backgroundColor = "#d3d3d3"; // Ausgegraute Fläche
+        door.style.color = "#7a7a7a"; // Graue Schrift
+        door.style.cursor = "not-allowed"; // Sperre das Türchen für nochmaliges Öffnen
+      } else if (day > currentDay) {
+        door.classList.add("locked");
+        door.style.backgroundColor = "#b71c1c"; // Rot für gesperrte Türchen
+        door.style.color = "white";
+      } else {
+        door.style.backgroundColor = day % 2 === 0 ? "#2e7d32" : "#d32f2f"; // Grün oder Rot
+        door.style.color = "white";
       }
   
-      // Event Listener für Türchen
+      // Klick-Event für Türchen
       door.addEventListener("click", () => {
-        const link = door.getAttribute("data-link");
-  
-        // Wenn das Türchen noch nicht geöffnet wurde
-        if (!openedDoors.includes(index)) {
-          openedDoors.push(index);
+        if (day <= currentDay && !openedDoors.includes(day)) {
+          openedDoors.push(day);
           localStorage.setItem("openedDoors", JSON.stringify(openedDoors));
-          door.classList.add("opened");
-          door.style.backgroundColor = "#e0e0e0"; // Grau
-          door.style.color = "#a0a0a0"; // Graue Schrift
-        }
   
-        // Weiterleitung zum Link
-        if (link) {
-          window.open(link, "_blank");
+          // Sofortiges Ausgrauen des Türchens
+          door.classList.add("opened");
+          door.style.backgroundColor = "#d3d3d3"; // Ausgegraute Fläche
+          door.style.color = "#7a7a7a"; // Graue Schrift
+          door.style.cursor = "not-allowed"; // Sperre das Türchen für nochmaliges Öffnen
+  
+          alert(`Türchen ${day} geöffnet!`);
+          window.open(doorLinks[day - 1], "_blank"); // Link in neuem Tab öffnen
+        } else if (day > currentDay) {
+          alert("Dieses Türchen ist noch gesperrt!");
+        } else if (openedDoors.includes(day)) {
+          window.open(doorLinks[day - 1], "_blank"); // Bereits geöffnet, Link trotzdem verfügbar
         }
       });
   
       calendar.appendChild(door);
     });
   
-    // Reset-Button Funktion
+    // Reset-Button
     resetButton.addEventListener("click", () => {
-      resetCalendar();
-    });
-  
-    function resetCalendar() {
       localStorage.removeItem("openedDoors");
-      location.href = location.href + "?reset=" + new Date().getTime(); // Seite neu laden, Cache umgehen
-    }
+      location.reload(); // Seite neu laden
+    });
   });
   

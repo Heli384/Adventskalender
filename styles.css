@@ -1,100 +1,144 @@
-/* Allgemeine Einstellungen */
+/* Allgemeine Stile */
 body {
-    margin: 0;
     font-family: 'Great Vibes', cursive;
-    background: linear-gradient(to bottom, #d6efff, #b0d4f0);
-    color: #333;
+    background-color: #f8f1e4;
+    margin: 0;
+    padding: 0;
     text-align: center;
-  }
-  
-  /* Header */
-  header {
-    background: #fbc02d;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
   }
   
   header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #fff;
+    font-size: 2rem;
+    color: #b71c1c;
+    margin: 20px 0;
   }
   
-  /* Kalender Layout */
-  .calendar {
+  #calendar {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 Spalten */
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
-    padding: 20px;
-    max-width: 420px;
-    margin: 20px auto;
+    max-width: 600px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
   }
   
   .door {
-    width: 80px;
-    height: 80px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 18px;
+    justify-content: center;
+    height: 100px;
+    border: 2px solid #8b4513;
+    border-radius: 5px;
+    font-size: 1.5rem;
     font-weight: bold;
-    text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    border: 2px solid #388e3c; /* Dunkelgrüner Rand */
-    border-radius: 10px;
-    margin: 5px;
-    color: white;
+    transition: transform 0.3s, background-color 0.3s;
   }
   
   .door:hover {
-    transform: scale(1.05); /* Kleiner Vergrößerungseffekt */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Hover-Schatten */
+    transform: scale(1.05);
+  }
+
+  /* Spezielle Stile für Türchen 24 */
+.door-24 {
+    font-size: 1.8rem;
+    height: 120px; /* Größere Höhe für Türchen 24 */
+    border: 2px solid #8b4513;
+    border-radius: 5px;
+    background-color: #d4af37; /* Gold */
+    color: white;
+  }
+  
+  .door-24:hover {
+    transform: scale(1.1); /* Türchen 24 wird leicht vergrößert, wenn darüber gehovt wird */
+  }
+  
+  .door.locked {
+    cursor: not-allowed;
+    background-color: #b71c1c;
+    color: white;
   }
   
   .door.opened {
-    background-color: #e0e0e0; /* Helles Grau */
-    color: #a0a0a0; /* Graue Schrift */
-    border: 2px solid #b0b0b0; /* Grauer Rand */
-    box-shadow: none; /* Kein Schatten mehr */
-    cursor: pointer; /* Klickbar bleiben */
+    background-color: #d3d3d3;
+    color: #7a7a7a;
   }
   
-  .door#door-24 {
-    width: 100px;
-    height: 100px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  
-  footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #555;
-  }
-  
-
   #reset-button {
-    display: block;
-    margin: 20px auto;
+    margin: 20px;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
-    background-color: #d32f2f; /* Weihnachtliches Rot */
-    color: #ffffff; /* Weiß für den Kontrast */
-    border: 2px solid #388e3c; /* Dunkelgrüner Rand */
-    border-radius: 10px;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Dezenter Schatten */
-    transition: all 0.3s ease; /* Sanfte Übergänge */
+    transition: background-color 0.3s;
   }
   
   #reset-button:hover {
-    background-color: #388e3c; /* Dunkles Grün beim Hover */
-    color: #ffd700; /* Goldene Schriftfarbe */
-    border-color: #d32f2f; /* Rot als Randfarbe */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Stärkerer Schatten */
+    background-color: #388e3c;
   }
   
+  /* Mobile Optimierung */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+  
+    #calendar {
+      grid-template-columns: repeat(4, 1fr); /* Weniger Spalten auf kleinen Bildschirmen */
+      gap: 5px;
+    }
+  
+    .door {
+      height: 80px; /* Kleinere Türchen */
+      font-size: 1.2rem;
+    }
+
+    /* Spezielle Stile für Türchen 24 */
+   .door-24 {
+    font-size: 1.2rem;
+    height: 90px; /* Größere Höhe für Türchen 24 */
+  }
+  
+  .door-24:hover {
+    transform: scale(1.1); /* Türchen 24 wird leicht vergrößert, wenn darüber gehovt wird */
+  }
+  
+    #reset-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #calendar {
+      grid-template-columns: repeat(3, 1fr); /* Noch weniger Spalten auf sehr kleinen Bildschirmen */
+    }
+  
+    .door {
+      height: 70px; /* Noch kleinere Türchen */
+      font-size: 1rem;
+    }
+
+    /* Spezielle Stile für Türchen 24 */
+.door-24 {
+    font-size: 1rem;
+    height: 80px; /* Größere Höhe für Türchen 24 */
+  }
+  
+    #reset-button {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
   

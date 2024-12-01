@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Links für die Türchen
     const doorLinks = [
-      "https://www.instagram.com/dannygould89/reel/DC1M_2EocmN/",
       "https://www.otto.de/p/kangaroos-buegel-bikini-top-anita-im-angesagten-blockstreifendesign-509826288/#variationId=536205062",
+      "https://www.instagram.com/lebzelterei_rosenheim/reel/DCUS5QmN7NA/",
       "https://instagram.com/reel/3",
       "https://instagram.com/reel/4",
       "https://instagram.com/reel/5",

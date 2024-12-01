@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Links für die Türchen
     const doorLinks = [
       "https://www.otto.de/p/kangaroos-buegel-bikini-top-anita-im-angesagten-blockstreifendesign-509826288/#variationId=536205062",
-      "https://www.instagram.com/lebzelterei_rosenheim/reel/DCUS5QmN7NA/",
-      "https://instagram.com/reel/3",
-      "https://instagram.com/reel/4",
+      "https://www.instagram.com/lebzelterei_rosenheim/",
+      "https://www.instagram.com/reel/DCChm9fN6y-/?igsh=MXVkbjlwbTNicnpldQ==",
+      "https://www.instagram.com/reel/DB3lZHMRea9/?igsh=MXQ5eTJuYmN0aDd6dg==",
       "https://instagram.com/reel/5",
       "https://instagram.com/reel/6",
       "https://instagram.com/reel/7",

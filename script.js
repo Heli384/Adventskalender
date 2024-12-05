@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://www.instagram.com/lebzelterei_rosenheim/",
       "https://www.instagram.com/reel/DCChm9fN6y-/?igsh=MXVkbjlwbTNicnpldQ==",
       "https://www.instagram.com/reel/DB3lZHMRea9/?igsh=MXQ5eTJuYmN0aDd6dg==",
-      "https://instagram.com/reel/5",
+      "https://www.instagram.com/p/COEi3JTn22B/?igsh=Ymh5MjdoN3RvNWZ1",
       "https://instagram.com/reel/6",
       "https://instagram.com/reel/7",
       "https://instagram.com/reel/8",

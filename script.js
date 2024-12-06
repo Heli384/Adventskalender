@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://www.instagram.com/reel/DB3lZHMRea9/?igsh=MXQ5eTJuYmN0aDd6dg==",
       "https://www.instagram.com/p/COEi3JTn22B/?igsh=Ymh5MjdoN3RvNWZ1",
       "https://raw.githubusercontent.com/Heli384/Adventskalender/c6eaad75671a1c06332d71ef46d2a740d8941e14/Nikolaus.jpg",
-      "https://instagram.com/reel/7",
+      "https://www.instagram.com/reel/COK6k3cIWyB/?igsh=MXd4Y3AxMXJiYnZ4MQ==",
       "https://instagram.com/reel/8",
       "https://instagram.com/reel/9",
       "https://instagram.com/reel/10",

@@ -11,15 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://www.instagram.com/p/COEi3JTn22B/?igsh=Ymh5MjdoN3RvNWZ1",
       "https://raw.githubusercontent.com/Heli384/Adventskalender/c6eaad75671a1c06332d71ef46d2a740d8941e14/Nikolaus.jpg",
       "https://www.instagram.com/reel/COK6k3cIWyB/?igsh=MXd4Y3AxMXJiYnZ4MQ==",
-      "https://instagram.com/reel/8",
-      "https://instagram.com/reel/9",
-      "https://instagram.com/reel/10",
-      "https://instagram.com/reel/11",
-      "https://www.champeimassage.com/behandlungen",
-      "https://instagram.com/reel/13",
-      "https://instagram.com/reel/14",
-      "https://instagram.com/reel/15",
-      "https://instagram.com/reel/16",
+      "https://www.instagram.com/reel/C-8o4Poyb3m/?igsh=MzJwc2hwd2l2a3I1",  //08. Dez. Lustiges Reel
+      "https://www.instagram.com/reel/DCj7Cr7oxBt/?igsh=ejA3czJwcDg5YXk2",  //09. Dez. Lustiges Reel
+      "https://www.instagram.com/reel/C_2VBTWMENI/?igsh=ZjUxbG5kYjBxZTI=",  //10. Dez Meditation u Ruhe -> Geschenk
+      "https://www.instagram.com/reel/DCXO75YtM3y/?igsh=ZzE0cnBqZHRzbGw=",  //11. Dez Cats
+      "https://www.champeimassage.com/behandlungen",   //12. Dez ->Geschenk
+      "https://instagram.com/reel/13https://www.instagram.com/reel/C8kLgDnMdyz/?igsh=bTJjbWlpbnloNThs",  //13. Dez Lieblingsmensch -> Geschenk
+      "https://instagram.com/reel/14",  //14. Dez
+      "https://instagram.com/reel/15",  //15. Dez
+      "https://instagram.com/reel/16",  //16. Dez
       "https://instagram.com/reel/17",
       "https://instagram.com/reel/18",
       "https://instagram.com/reel/19",

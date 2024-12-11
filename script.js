@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://www.instagram.com/reel/C_2VBTWMENI/?igsh=ZjUxbG5kYjBxZTI=",  //10. Dez Meditation u Ruhe -> Geschenk
       "https://www.instagram.com/reel/DCXO75YtM3y/?igsh=ZzE0cnBqZHRzbGw=",  //11. Dez Cats
       "https://www.champeimassage.com/behandlungen",   //12. Dez ->Geschenk
-      "https://instagram.com/reel/13https://www.instagram.com/reel/C8kLgDnMdyz/?igsh=bTJjbWlpbnloNThs",  //13. Dez Lieblingsmensch -> Geschenk
-      "https://instagram.com/reel/14",  //14. Dez
+      "https://github.com/Heli384/Adventskalender/blob/main/haserl.jpg?raw=true",  //13. Dez Lieblingsmensch -> Geschenk
+      "https://www.instagram.com/reel/DDPbzHLpiou/?igsh=ZnJqc3pmdjU1OHRk",  //14. Dez
       "https://instagram.com/reel/15",  //15. Dez
       "https://instagram.com/reel/16",  //16. Dez
       "https://instagram.com/reel/17",

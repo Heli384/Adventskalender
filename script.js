@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://www.instagram.com/reel/DDPbzHLpiou/?igsh=ZnJqc3pmdjU1OHRk",  //14. Dez
       "https://www.instagram.com/reel/DDW7jKrIx1T/?igsh=MXBudjJzanQ0aHdvcQ==",  //15. Dez
       "https://www.instagram.com/reel/DCjfFUiSQMD/?igsh=MTE2N25iZm15NTJyNQ==",  //16. Dez
-      "https://instagram.com/reel/17",
-      "https://instagram.com/reel/18",
-      "https://instagram.com/reel/19",
+      "https://github.com/Heli384/Adventskalender/blob/main/unicorn.jpg?raw=true",
+      "https://github.com/Heli384/Adventskalender/blob/main/dog.jpg?raw=true",
+      "https://github.com/Heli384/Adventskalender/blob/main/cat.jpg?raw=true",
       "https://instagram.com/reel/20",
       "https://instagram.com/reel/21",
       "https://instagram.com/reel/22",

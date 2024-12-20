@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://github.com/Heli384/Adventskalender/blob/main/unicorn.jpg?raw=true",
       "https://github.com/Heli384/Adventskalender/blob/main/dog.jpg?raw=true",
       "https://github.com/Heli384/Adventskalender/blob/main/cat.jpg?raw=true",
-      "https://instagram.com/reel/20",
+      "https://www.instagram.com/reel/DCe5fDRO9ZA/?igsh=cXVybTE4cTZyZjA5",
       "https://instagram.com/reel/21",
       "https://instagram.com/reel/22",
       "https://instagram.com/reel/23",

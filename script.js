@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "https://github.com/Heli384/Adventskalender/blob/main/dog.jpg?raw=true",
       "https://github.com/Heli384/Adventskalender/blob/main/cat.jpg?raw=true",
       "https://www.instagram.com/reel/DCe5fDRO9ZA/?igsh=cXVybTE4cTZyZjA5",
-      "https://instagram.com/reel/21",
+      "https://www.instagram.com/reel/DC4kI13N4g0/?igsh=czl4YzYzbG8xajF2",
       "https://instagram.com/reel/22",
       "https://instagram.com/reel/23",
       "https://www.therme-erding.de/"
